@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - Boot-Qr-new
+name: Build and deploy JAR app to Azure Web App - shashank-project
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v1
         with:
-          java-version: '17'
+          java-version: '8'
 
       - name: Build with Maven
         run: mvn clean install
@@ -47,7 +47,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Boot-Qr-new'
+          app-name: 'shashank-project'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_ad21650e508f4f05bb3473b25cb5e351 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_e3c1d9cd1c354d9e80a34a793df9533e }}
           package: '*.jar'
